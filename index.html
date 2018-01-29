@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>丝绸之路</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <link rel="shortcut icon" href="img/logo-logo1.png" >
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .ytf-address {
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-top: 15px;
+            word-break: break-all;
+        }
+
+        .footer-qrcode {
+            width: 110px;
+            height: 110px;
+        }
+    </style>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="layout">
+
+        <div class="banner" id="banner">
+            <div  id="marquee">
+                <div class="lable-item">
+                    <span class="icon-laba"></span>
+                    <span class="lable-item-text">公告</span>
+                </div>
+
+                <div style="white-space: nowrap;overflow:hidden;" id="scroll_div" class="scroll_div">
+                    <div id="scroll_begin">
+                        通告：违规私募已被清退，请大家擦亮双眼，保护好的自己的eth，如果有任何疑问，请通过下方的官方渠道了解
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                    <div id="scroll_end"></div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                function ScrollImgLeft() {
+                    var speed = 20;
+                    var scroll_begin = document.getElementById("scroll_begin");
+                    var scroll_end = document.getElementById("scroll_end");
+                    var scroll_div = document.getElementById("scroll_div");
+                    scroll_end.innerHTML = scroll_begin.innerHTML;
+                
+                    function Marquee() {
+                        if (scroll_end.offsetWidth - scroll_div.scrollLeft <= 0)
+                            scroll_div.scrollLeft -= scroll_begin.offsetWidth;
+                        else
+                            scroll_div.scrollLeft++;
+                    }
+                    var MyMar = setInterval(Marquee, speed);
+                    scroll_div.onmouseover = function() { clearInterval(MyMar); }
+                    scroll_div.onmouseout = function() { MyMar = setInterval(Marquee, speed); }
+                }
+                 ScrollImgLeft();
+                </script>
+
+            <div style="position: absolute;z-index: 0;width: 100%;height: 100%;">
+                <canvas id="root" style="width: 100%;opacity: 0.6;height: 100%;"></canvas>
+            </div>
+            <div style="position: absolute;z-index: 10000;top: 0;left: 0;width: 100%;height: 100%;">
+                <div class="banner-head clearfix">
+                    <div class="col-sm-5 col-xs-6 col-md-6 col-lg-7">
+                        <img src="img/logo_page.png" />
+                    </div>
+                </div>
+
+                <div class="banner-title-wrapper">
+                    <div class="banner-title">
+                        <p id="bannertit">全球区块链电商平台</p>
+                        <div style="width: 100%;max-width:650px;margin: 0 auto;" class="row">
+                            <!-- <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6" style="margin-top: 30px;">
+                                    <a href="img/star/StarChain.pdf" class="paper">TECHNICAL WHITE PAPER</a>
+                                </div> -->
+
+                            <br>
+                            <br>
+                            <br>
+                            <div class="" style="margin:25px auto 0;">
+                                <a href="img/丝绸之路白皮书.pdf" class="paper">中文白皮書下載</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 技术创新 -->
+        <div class="technique">
+            <div class="container">
+                <div class="row">
+                    <p class="technique-title">技术创新</p>
+                </div>
+                <div class="row" >
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="item">
+                            <img src="./img/technology_01.png" alt="">
+                            <p class="item-name">丝绸之路
+                            </p>
+                            <p class="item-text">丝绸之路项目团队注重电子商务平台生态的整合,在项目发展初期就已成功的与多家电子商务企业、渠道商和品牌零售主力商达成全面战略合作。</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="item">
+                            <img src="./img/technology_02.png" alt="">
+                            <p class="item-name">资产管理</p>
+                            <p class="item-text">丝绸之路的核心价值在于，利用区块链特有的可信数据环境特性，让电子商务产品生产者完成品牌生产权利声明和专利登记，为后续投资其收益价值、交易和商业化奠定基础。</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="item">
+                            <img src="./img/technology_03.png" alt="">
+                            <p class="item-name">矩阵链</p>
+                            <p class="item-text">丝绸之路继承了矩阵链的诸多优点并且更加专注于电子商务企业产品的登记确权、IP 资产管理和交易、去中心化内容平台等应用</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="item">
+                            <img src="./img/technology_04.png" alt="">
+                            <p class="item-name">资料挖矿</p>
+                            <p class="item-text">丝绸之路具备强大的扩展能力，为第三方渠道商、电子商务企业生产商等用户，提供简单快捷的扩展服务，让丝绸之路这个生态系统业务更加广泛，网络更加安全。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 顾问团队 -->
+        <!--
+        <div class="team">
+        	<div class="container">
+	           	<div class="row">
+	                <p class="team-title">顾问团队</p>
+	           	</div>
+            </div>
+            <div id="main">
+
+                <div class="box">
+                    <div class="team-item">
+                        <div class="item-left">
+                            <img src="./img/team_CEO.jpeg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <p class="team-name">黄禄富</p>
+                            <p class="team-subname">CEO</p>
+                            <div class="line"></div>
+                            <p class="team-text">1998 毕业于华南理工大学无线电工程系毕业获学士学位;
+                                1998~2001 华南理工大学电自信息工程系电子信息系统专业毕
+                                业获得硕士学位;2002~2005 华南理工大学电子信息工程系通信与信息系统专业毕业获得博士学位;
+                                作经历:2001~2003 广东北电研究开发中心软件工程师; 2004~2007 香港大学电机与电子工程系研究代理; 2008~2012 大唐软件技术研发部经理;
+                                2014 创办网络技术公司;研究领域: 电信网络管理系统、下一代网络架构、无线通信技术、IEEE802.15.4/Zigbee 技术</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="box">
+                    <div class="team-item">
+                        <div class="item-left">
+                            <img src="./img/team2.jpeg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <p class="team-name">Lousi Aaron</p>
+                            <p class="team-subname">丝绸之路联合创始人</p>
+                            <div class="line"></div>
+                            <p class="team-text">多年风险投资经验，专注于区块链与人工智能领域。 早年在英国爱丁堡大学信息学院求学，获得了Computer
+                                Science 的本科学位与 Artificial Intelligence 的硕士学位。曾在英国曾参与过多个AI项目开发。对全球大量区块链项目做过
+                                深度调研，对区块链技术及应用有着深刻了解。曾主导过多个国内区块链应用项目的投资，同时也是丝绸之路的早期投资人之一 。</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box">
+                    <div class="team-item">
+                        <div class="item-left">
+                            <img src="./img/team3.jpeg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <p class="team-name">Mikhail Stepanenko</p>
+                            <p class="team-subname">丝绸之路 CER</p>
+                            <div class="line"></div>
+                            <p class="team-text">区块链 / PHP 开发者——负责接收和处理代币，九年工作经验。</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="box">
+                    <div class="team-item">
+                        <div class="item-left">
+                            <img src="./img/team4.jpeg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <p class="team-name">艾又明</p>
+                            <p class="team-subname">丝绸之路CIO</p>
+                            <div class="line"></div>
+                            <p class="team-text">2003  -2008  就读于南通农业职业技术学院计算机专业。
+                                2007  实习于南通一所IT企业，并一直到2009年 6月 。
+                                2009  创办圆明网络技术有限公司。 圆明网络公司执行董事、董事会主席兼本公司首席执行官(CEO)，全面负责圆明网络的策略规划、定位和管理。是主要创办人之一，  2009  起受雇于圆明网络技术有限公司</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box">
+                    <div class="team-item">
+                        <div class="item-left">
+                            <img src="./img/team5.jpeg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <p class="team-name">乔罗晋</p>
+                            <p class="team-subname">丝绸之路 MD </p>
+                            <div class="line"></div>
+                            <p class="team-text">
+                                2006  获山西大学济学学士学位 2012 年获得亚洲(澳门) 国际公开大学( Asia
+                                International Open University MACAU) 工商管理硕士学位(MBA)
+                                主要从事技术转移与高技术产业化、企业管理与孵化、资本运作
+                                等相关领域的工作，领导实施了中关村科技园区著名高科技企业一北
+                                京中自技术集团的股份制改造工作，创造了高科技企业股份制改造新模
+                                式，理顺了科研院所与其投资企业的资产关系，彻底解决了长期困扰高
+                                科技企业发展的产权问题，使经营性国有资产有较大幅度的增值。
+                                他还组织协调策划实施了多项由国家发改委、中国科学院、中
+                                石油股份公司、中石化股份公司及地方政府等资助的重大科研项目
+                                及高技术产业化示范工程项目。他领导组建了中科院北京国家技术
+                                建立了新形势下科研院所技术转移工作的新体制与新机制，使国家技术转移中心成为国内技术转移领域的领头雁
+
+                                他策划实施了中科院与北京市政府对国家技术转移中心的共建
+                                工作，使之成为中央科研机构与地方政府在科技与经济结合领域的
+                                典范，被评为“2014 年度中关村十大新闻。”中心还与国内近20 个
+                                省市地方政府签订了院地合作协议。他还领导组建了中科院第一家
+                                专业孵化器一北京中自科技产业孵化器有限公司，努力探索经营性
+                                国有资产管理新体制与新机制。他在国家级刊物上先后发表经营性
+                                国有资产管理框架设计与实践、企业改制、技术转移观念转变、科技与经济结合新途径等方面的文章，其中部分文章被国内多家报刊及网站转载或引
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box">
+
+                    <div class="team-item">
+                        <div class="item-left">
+                            <img src="./img/team6.jpeg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <p class="team-name">徐厚国</p>
+                            <p class="team-subname">丝绸之路 CTO </p>
+                            <div class="line"></div>
+                            <p class="team-text">。
+
+                                具有15 年美国宾夕法尼亚州立大学的科研和教学经验(1996 年
+                                到2010 年) 以及4年工业界管理和软件开发的经验。曾经在宾夕法尼亚
+                                州立大学指导博士研究生10 名，硕士研究生25 人，博士后15
+                                人。
+                                徐厚国教授在电磁场数值方法，高性能计算，软件开发，硬件加速
+                                技术，教育大数据，大数据以及电磁仿真系统开发方面发表学术论文
+                                170 多篇，出版英文专著6部，出版中文专著3部，翻译专著1部，主
+                                持开发了世界上第一个商业并行GEMS 电磁仿真软件。徐厚国教授是
+                                担任过多个国际学术专刊客座编辑。中国教育大数据研究院民办分院首
+                                席专家。发起并主持2008 中国传媒大学高性能计算国际研讨会。发起
+                                并主持2013 哈尔滨工程大学高等计算电磁学国际研讨会。发起并主持
+                                2015北京超材料技术国际研讨会发起并主持第一届大数据电磁学论坛。主持国家自然科学基金上项 。是多个国内和国际杂志编委和审
+                                稿 ，几个国际会议大会共同主席、技术委员会成员以及国际指导委员成员，做过多次国际会议大会发言和特邀报告。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box">
+                    <div class="team-item">
+                        <div class="item-left">
+                            <img src="./img/team7.jpeg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <p class="team-name">刘汉强</p>
+                            <p class="team-subname">丝绸之路战略顾问 </p>
+                            <div class="line"></div>
+                            <p class="team-text">职业: 演员，歌手，主持人，赛车手代表作品
+                                《一场风花雪月的事》《相亲相爱一家人》《盛宴》《儿女的战争》成
+                                功参与资本运作案例: 2011年，海润影视启动上市日程，最开始计划
+                                赴香港上市，后因香港股市低迷而推迟上市计划。此后，又逢
+                                国内IPO 停滞一年。不过刘汉强敏锐地捕捉到了这些讯息，2012 年
+                                10 月，刘汉强以156.60 万入股海润影视，目前持有海润影视0.56%
+                                股权。根据重组方案，刘汉强将占上市公司0.36%的股份。按照7 月
+                                10 日涨停价计算，刘汉强持有股票市值高达1542.10 万元，相比当初
+                                投资的钱，不到一年的时间里足足翻了10 倍。。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box">
+                    <div class="team-item">
+                        <div class="item-left">
+                            <img src="./img/team8.jpeg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <p class="team-name">艾伟</p>
+                            <p class="team-subname">丝绸之路战略顾问
+                                丝绸之路天使投资  </p>
+                            <div class="line"></div>
+                            <p class="team-text">
+                                影视演员，参演过《单身女人》、《倩女勾魂》、《紫色的梦》、《折
+                                翼天使》、《浪漫情花》、《还我柔情》、《洗钱》等影视剧。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        -->
+        <!-- 白皮书 -->
+        <div class="book">
+            <div class="container">
+                <div class="row">
+                    <p class="book-title">白皮书</p>
+                </div>
+                <div class="row">
+                    <p class="book-text">下载我們的白皮书，这里有关于这个激动人心专案的一切资讯。我们不止希望你能了解我们所做的事情有多么的充满想像力，更希望你和我们为了這个创举的实现共同前行。</p>
+                    <img class="book-icon" src="./img/whitepaper.png" alt="">
+                    <a href="img/丝绸之路白皮书.pdf" class="book-btn">中文白皮书下载</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 區塊鏈 -->
+        <div class="block">
+            <div class="container">
+                <div class="row">
+                    <p class="block-title">区块链+电商</p>
+                </div>
+                <div class="row">
+                    <img src="./img/IP.png" alt="">
+                    <p class="block-text">丝绸之路是基于电子商务平台，实现互联与共享，从厂家到客户形成简单快捷的扩展服务，减少中间环节，让客户与厂家实现共赢！</p>
+                </div>
+            </div>
+        </div>
+
+        <!--加入我們
+        <div class="join-wrapper">
+            <div class="container">
+                <div class="join">
+                    <div class="content-box row" style="padding: 0;">
+                        <div class="col-sm-12 col-xs-12 col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2" style="text-align:center">
+                            <span style="line-height: 48px;">加入我們</span>
+                        </div>
+                        <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6" style="margin-bottom: 35px;">
+                            <div style="position: relative;max-width:500px">
+                                <input type="text" name="" id="email" value="" placeholder="請輸入您的電子郵箱" />
+                                <span id="join">加入</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+        <!--底部-->
+        <div class="footer">
+            <div class="content-box " style="padding-top: 40px;">
+                <div class="footer-us">
+                    <a style="color: #fff;">联系</a>
+                </div>
+                <div class="foot-join row" style="position: relative;">
+                    <!--<dl class=" col-sm-4 col-xs-12 col-md-4 col-lg-4 qrcode-item" onclick="fu()" data-container="body" data-toggle="popover"-->
+                        <!--data-placement="top" data-content="The link has been copied. Please open the BeeChat group with your browser:<a href='https://beechat.io/join?g=7a6807acc57c48ed9307280faedb064c&lang=zh'>https://beechat.io/join?g=7a6807acc57c48ed9307280faedb064c&lang=zh</a>">-->
+                        <!--<dt style="margin-top: 30px;">-->
+                            <!--<img src="img/beechat.png" />-->
+                        <!--</dt>-->
+                        <!--<dd style="margin-top: 23px;">點開鏈接加入我的BeeChat群主</dd>-->
+                    <!--</dl>-->
+                    <dl class="col-sm-6 col-xs-12 col-md-6 col-lg-6 qrcode-item" id="WeChat">
+                        <dt>
+                            <img src="img/QR1.jpeg" />
+                        </dt>
+                        <dd>丝绸之路公众号</dd>
+                    </dl>
+                    <dl class="col-sm-6 col-xs-12 col-md-6 col-lg-6 qrcode-item">
+                        <dt>
+                            <img width="110" height="110" src="img/QR2.jpeg" />
+                        </dt>
+                        <dd>丝绸之路NSRC客服</dd>
+                    </dl>
+                    <!--<textarea name='code' id='co' style="opacity: 0;position: absolute; top: 0;left: 0;" />https://beechat.io/join?g=7a68de6e58ad44e48703cfc966b6e431&lang=zh</textarea>-->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+<script>
+    function CanvasAnimate(Dom, options) {
+        options = options || {}
+        this.Element = Dom;
+        Dom.width = document.body.clientWidth;
+        Dom.height = window.innerHeight;
+        this.cvs = Dom.getContext("2d");
+        this.off_cvs = document.createElement("canvas");
+        this.off_cvs.width = document.body.clientWidth;
+        this.off_cvs.height = document.body.clientHeight;
+        this.Dom = this.off_cvs.getContext("2d");
+        this.width = document.body.clientWidth || document.clientWidth;
+        this.height = document.body.clientHeight || document.clientHeight;
+        this.length = options.length || 100;
+        this.RoundColor = options.RoundColor || "#999";
+        this.RoundDiameter = options.RoundDiameter || 2;
+        this.LineColor = options.LineColor || "#828386";
+        //			    this.LineWeight = options.LineWeight || 1;
+        this.LineWeight = 0.5
+        this.clicked = options.clicked || false;
+        this.moveon = options.moveon || false;
+        this.list = [];
+        this.paused = true;
+    }
+    CanvasAnimate.prototype.Run = function () {
+        if (this.clicked) {
+            this.Element.addEventListener("click", this.Clicked.bind(this))
+        }
+        if (this.moveon) {
+            this.Element.addEventListener("mousemove", this.moveXY.bind(this))
+            this.Element.addEventListener("mouseout", this.moveoutXY.bind(this))
+        }
+        this.Draw(this.getLength())
+    }
+    CanvasAnimate.prototype.getLength = function () {
+        let arr = []
+        for (let i = 0; i < this.length; i++) {
+            let obj = {}
+            obj.x = parseInt(Math.random() * this.width)
+            obj.y = parseInt(Math.random() * this.height)
+            //			            obj.r = parseInt( Math.random()*10 ) || 1
+            obj.r = 2.5
+            obj.controlX = parseInt(Math.random() * 10) > 5 ? "left" : "right"
+            obj.controlY = parseInt(Math.random() * 10) > 5 ? "bottom" : "top"
+            arr.push(obj)
+        }
+        return arr
+    }
+    CanvasAnimate.prototype.Draw = function (list) {
+        let new_arr = []
+        let line_arr = []
+
+        list.map((item, index) => {
+            let xy = this.ControlXY(item)
+            let obj = this.ControlRound(xy)
+            new_arr.push(obj)
+        });
+
+        new_arr.map((item1, index1) => {
+            new_arr.map((item2, index2) => {
+                if (item1 !== item2) {
+                    let x = item1.x - item2.x
+                    let y = item1.y - item2.y
+                    if (Math.abs(x) < 100 && Math.abs(y) < 100) {
+                        let obj = {
+                            x1: item1.x,
+                            y1: item1.y,
+                            x2: item2.x,
+                            y2: item2.y,
+                        }
+                        line_arr.push(obj)
+                    }
+                }
+            })
+        })
+
+        this.drawLine(line_arr)
+
+        new_arr.map((item) => {
+            this.drawRound(item)
+        })
+
+        this.list = new_arr
+
+        this.cvs.drawImage(this.off_cvs, 0, 0, this.width, this.height)
+
+        setTimeout(() => {
+            if (this.paused) {
+                this.next()
+            }
+        }, 50)
+    }
+    CanvasAnimate.prototype.next = function () {
+        this.cvs.clearRect(0, 0, this.width, this.height)
+        this.Dom.clearRect(0, 0, this.width, this.height)
+        this.Draw(this.list)
+    }
+    CanvasAnimate.prototype.drawRound = function (obj) {
+        let {
+            x,
+            y,
+            r
+        } = obj
+        this.Dom.beginPath()
+        this.Dom.arc(x, y, r, 0, 2 * Math.PI)
+        this.Dom.fillStyle = this.RoundColor
+        this.Dom.fill()
+        this.Dom.closePath()
+    }
+    CanvasAnimate.prototype.drawLine = function (list) {
+        list.map((item) => {
+            this.Dom.beginPath()
+            this.Dom.moveTo(item.x1, item.y1)
+            this.Dom.lineTo(item.x2, item.y2)
+            this.Dom.lineWidth = this.LineWeight
+            this.Dom.strokeStyle = this.LineColor
+            this.Dom.stroke()
+            this.Dom.closePath()
+        })
+    }
+    CanvasAnimate.prototype.ControlXY = function (obj) {
+        if (obj.x >= (this.width - obj.r)) {
+            obj.controlX = 'left'
+        } else if (obj.x <= parseInt(obj.r / 2)) {
+            obj.controlX = "right"
+        }
+
+        if (obj.y >= (this.height - obj.r)) {
+            obj.controlY = "bottom"
+        } else if (obj.y <= parseInt(obj.r / 2)) {
+            obj.controlY = "top"
+        }
+        return obj
+    }
+    CanvasAnimate.prototype.ControlRound = function (obj) {
+        switch (obj.controlX) {
+            case "right":
+                obj.x++;
+                break;
+            case "left":
+                obj.x--;
+                break;
+        }
+        switch (obj.controlY) {
+            case "top":
+                obj.y++;
+                break;
+            case "bottom":
+                obj.y--;
+                break;
+        }
+        return obj
+    }
+    CanvasAnimate.prototype.Clicked = function (event) {
+        let obj = {}
+        obj.x = event.clientX
+        obj.y = event.clientY
+        obj.r = parseInt(Math.random() * 10)
+        obj.controlX = parseInt(Math.random() * 10) > 5 ? 'left' : 'right'
+        obj.controlY = parseInt(Math.random() * 10) > 5 ? 'bottom' : 'top'
+        this.list.push(obj)
+    }
+    CanvasAnimate.prototype.moveXY = function (event) {
+        let obj = {}
+        obj.x = event.clientX
+        obj.y = event.clientY
+        obj.r = 0
+        obj.move = true
+        if (this.list[0]["move"]) {
+            this.list[0]["x"] = obj.x
+            this.list[0]["y"] = obj.y
+            this.list[0]["r"] = 1
+        } else {
+            this.list.unshift(obj)
+        }
+    }
+    CanvasAnimate.prototype.moveoutXY = function (event) {
+        this.list.shift()
+    }
+    CanvasAnimate.prototype.pause = function () {
+        this.paused = !this.paused
+        if (this.paused) {
+            this.Draw(this.list)
+        }
+    }
+</script>
+<script type="text/javascript">
+    if ((navigator.userAgent.match(
+            /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+        ))) {
+        var phoneHeight = window.innerHeight;
+        var root = document.querySelector("#root")
+        var a = new CanvasAnimate(root, {
+            length: 80,
+            clicked: true,
+            moveon: true
+        })
+        a.Run();
+        var width = document.body.clientWidth;
+        $('#banner .banner-title').css('margin-top', '115px')
+        $('#banner').css({
+            width: width,
+            height: phoneHeight,
+            background: 'url(img/phonebanner.jpg)',
+            backgroundSize: '100% 100%'
+        })
+        $('.chart').css({
+            background: 'url(img/iphonebg.jpg)',
+        })
+        $('#weixin').css('border', 'none');
+        $('#WeChat').css('border', 'none');
+        var texthei = $("#text").width();
+        $('#text').css({
+            marginLeft: texthei + 'px',
+            textAlign: 'center'
+        });
+        $('#text .star-text div p').css('margin', '0 auto')
+        var size = (width / 10) - 3;
+        $('#bannertit').css({
+            fontSize: size + 'px',
+            lineHeight: '55px'
+        });
+        $('#numCurrency').css({
+            fontSize: size + 'px'
+        });
+        var securitySize = (width / 12) - 5;
+        $('.touzi').css({
+            fontSize: securitySize + 'px'
+        });
+        var touziSize = (width / 15) - 5;
+        var sss = (width / 15) - 2;
+        $('.jiaoyi').css({
+            fontSize: touziSize + 'px'
+        });
+        $('#chartTwo').css({
+            fontSize: securitySize + 'px'
+        });
+        $('#chartOne').css({
+            fontSize: sss + 'px'
+        });
+    } else {
+        var docWidt = document.body.clientWidth;
+        if (docWidt > 1920) {
+            $('#banner').css({
+                width: width,
+                backgroundSize: '100% 100%'
+            })
+        }
+        var root = document.querySelector("#root")
+        var a = new CanvasAnimate(root, {
+            length: 170,
+            clicked: true,
+            moveon: true
+        })
+        a.Run()
+        var phoneHeight = window.innerHeight;
+        $('#banner').css({
+            height: phoneHeight,
+        });
+    }
+    //邮箱
+    $('#join').click(function () {
+        var email = $('#email').val();
+        var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+        if (!reg.test(email)) {
+            alert('无效邮箱地址')
+            return
+        }
+        $.ajax({
+            type: "get",
+            url: "/mail?mail=" + email,
+            async: true,
+            success: function (data) {
+                if (data == 'ok') {
+                    alert('success')
+                    $('#email').val('');
+                }
+            }
+        });
+    })
+
+    $('[data-toggle="popover"]').popover({
+        html: true
+    })
+
+    function fu() {
+        var cod = document.getElementById('co');
+        cod.select();
+        document.execCommand("Copy");
+    }
+
+</script>
+<script type="text/javascript" src="js/index.js"></script>
